@@ -1,0 +1,56 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <view class="page__bd">
+    <mp-form id="form1" rules="{{rules}}" models="{{formData}}">
+      <mp-cells title="刷票模式">
+        <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+          <mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}"
+            checked="{{item.checked}}"></mp-checkbox>
+        </mp-checkbox-group>
+      </mp-cells>
+      <mp-cells title="订票信息">
+        <mp-cell prop="startCity" title="始发站" data-type="0" bindtap="goCity">
+          <view class="weui-cell__ft">
+            <input disabled="" value="{{startCityName}}" placeholder="请选择"></input>
+          </view>
+        </mp-cell>
+        <mp-cell prop="endCity" title="到达站" data-type="1" bindtap='goCity'>
+          <view class="weui-cell__ft">
+            <input disabled="" value="{{endCityName}}" placeholder="请选择" />
+          </view>
+        </mp-cell>
+        <mp-cell title="乘车日期" ext-class="">
+          <view class="weui-cell__ft">
+            <picker prop="ccdate" data-field="date" mode="date" value="{{date}}" bindchange="bindDateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </view>
+        </mp-cell>
+        <mp-cell prop="ccinfoemation" title="车次信息" ext-class="">
+          <view class="weui-cell__ft">
+            <input bindinput="formInputChange" data-field="ccinfoemation"></input>
+          </view>
+
+        </mp-cell>
+        <mp-cell prop="cctype" title="乘车席别" ext-class="">
+          <view class="weui-cell__ft">
+            <view class="section">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                  {{array[index]}}
+                </view>
+              </picker>
+            </view>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+    <view class="cityContainer {{showCity ? 'showCity': ''}}">
+     <list-html data="{{city}}" my-city="当前城市" binddetail="binddetail" config="{{config}}"> </list-html>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submitForms">确定</button>
+    </view>
+  </view>
+</view>

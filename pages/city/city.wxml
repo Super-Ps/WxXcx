@@ -1,0 +1,4 @@
+<!--pages/city/city.wxml-->
+<view class='wrapper'> 
+  <list-html data="{{city}}" my-city="当前城市" binddetail="binddetail" config="{{config}}"> </list-html>
+</view> 

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        ".babelrc": "json",
+        "*.wxml": "html",
+        "*.wxss": "css"
+    }
+}
