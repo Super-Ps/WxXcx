@@ -117,7 +117,7 @@ Page({
       success: function (res) {
         console.log('bind.do:', res)
         wx.navigateTo({
-          url: '../home/home',
+          url: '../test/test',
         })
         // if (res.data.__GetZoneResult_) {
         //  // that.handlerError('接口调用失败')

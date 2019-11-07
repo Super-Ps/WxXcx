@@ -1,17 +1,14 @@
 <!--pages/homefrom/homefrom.wxml-->
 <view class="page__bd">
-    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-        <!-- <mp-cells title="单选列表项">
-            <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
-                <mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
-            </mp-checkbox-group>
-        </mp-cells>
-        <mp-cells title="复选列表项">
-            <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
-                <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
-            </mp-checkbox-group>
-        </mp-cells> -->
+    <view class="userinfo" >
 
+                <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+                <block wx:else>
+                <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
+                 <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </block>
+    </view>
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
         <mp-cells title="第一次填写信息登陆,可免登陆" footer="填写有效信息">
             <mp-cell prop="account" title="账号" ext-class="">
                 <input bindinput="formInputChange" data-field="account" class="weui-input" placeholder="请输入12306账号"/>
@@ -53,7 +50,7 @@
     </mp-form>
     <view class="weui-btn-area">
         <!-- <input type="number" placeholder="number" bindinput="formInputChangeA"></input> -->
-        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        <button class="weui-btn" type="primary" bindtap="submitForm">下一步</button>
     </view>
 <mp-toptips msg="{{tipsError}}" type="error" show="{{tipsError}}"></mp-toptips>
 </view>

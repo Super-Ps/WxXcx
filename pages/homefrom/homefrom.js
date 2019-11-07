@@ -1,11 +1,17 @@
+//获取应用实例
+const app = getApp()
+
 
 Page({
     data: {
         tipsError: '',
         showTopTips: false,
         error: "",
-
         isAgree: false,
+        userInfo: {},
+        hasUserInfo: false,
+        nickName:'nickName',
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
         formData: {
 
         },
@@ -24,6 +30,15 @@ Page({
             name: 'phone',
             rules: [{ required: true, message: '手机是必选项'}, {mobile: true, message: '手机格式不对'}],
         }]
+    },
+
+    getUserInfo: function(e) {
+      console.log('eeee',e)
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
     },
 
     formInputChange:function(e) {

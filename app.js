@@ -2,6 +2,8 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+
+    console.log('app  onlaunch!!')
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -9,6 +11,7 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log('app login',res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -33,6 +36,7 @@ App({
       }
     })
   },
+   
   globalData: {
     userInfo: null
   }
