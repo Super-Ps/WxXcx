@@ -231,6 +231,7 @@ Page({
     })
   },
   goCity: function (e) {
+    console.log('eee',e)
     this.setData({
       showCity: true,
       cityType: e.currentTarget.dataset.type

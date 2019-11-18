@@ -50,7 +50,7 @@
     </mp-form>
     <view class="weui-btn-area">
         <!-- <input type="number" placeholder="number" bindinput="formInputChangeA"></input> -->
-        <button class="weui-btn" type="primary" bindtap="submitForm">下一步</button>
+        <button class="weui-btn" type="primary" bindtap="submitForm">登录</button>
     </view>
 <mp-toptips msg="{{tipsError}}" type="error" show="{{tipsError}}"></mp-toptips>
 </view>

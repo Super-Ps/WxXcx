@@ -32,6 +32,36 @@ Page({
         }]
     },
 
+    onLoad:function(){
+
+           wx.login({
+               success: function (data) {
+                 console.log('data@@@code',data)
+                 console.log('code',data.code)
+                   wx.request({
+                      url: 'http://localhost:3000/wx/login',
+                      data: {
+                      code: data.code,
+                      appid: 'wxce0321505ba7122b',
+                      secret: '10c1f3dac03673032492752add69869a',
+                      grant_type: 'authorization_code'
+                     },
+                   success: function (res) {
+                     console.log('@@@@@res',res)
+                    app.globalData.openid = res.data.openid
+                     },
+                   fail: function (res) {
+                      console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+                     }
+                       })
+                  },
+              fail: function (err) {
+                console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
+                callback(err)
+              }
+    })
+    },
+
     getUserInfo: function(e) {
       console.log('eeee',e)
       app.globalData.userInfo = e.detail.userInfo

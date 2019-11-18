@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "list-html": "/component/wx-index-list/wx-index-list",
     "mp-dialog": "../../miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-toptips": "../../miniprogram_npm/weui-miniprogram/toptips/toptips",
     "mp-cells": "../../miniprogram_npm/weui-miniprogram/cells/cells",
@@ -7,8 +8,5 @@
     "mp-checkbox": "../../miniprogram_npm/weui-miniprogram/checkbox/checkbox",
     "mp-checkbox-group": "../../miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
     "mp-form": "../../miniprogram_npm/weui-miniprogram/form/form"
-  },
-  
-    "navigationBarTitleText": "展示数据"
-  
+  }
 }

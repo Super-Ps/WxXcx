@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- <view class="page-body">
+    <view class="flex-wrp">
+      <mp-cells>
+      <mp-cell title="查询日期" ext-class="">
+        <picker prop="querydate" data-field="date" mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell prop="startCity" title="始发站" data-type="0" bindtap="goCity">
+        <view class="weui-cell__ft">
+          <input disabled="" value="{{startCityName}}" placeholder="请选择"></input>
+        </view>
+      </mp-cell>
+      <mp-cell prop="endCity" title="到达站" data-type="1" bindtap='goCity'>
+        <view class="weui-cell__ft">
+          <input disabled="" value="{{endCityName}}" placeholder="请选择" />
+        </view>
+      </mp-cell>
+      <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" bindtap="submitForms">查询</button>
+        </view>
+        </mp-cells>
+    </view>
+  </view>
+  <view class="cityContainer {{showCity ? 'showCity': ''}}">
+      <list-html data="{{city}}" my-city="当前城市" binddetail="binddetail" config="{{config}}"> </list-html>
+  </view> -->
+   <view class="head"></view>
+   <view class="body">
+     <view class="bodybg"></view>
+     <view class="bodymain">
+       <view class="main_item row1">
+         <view class="item">上海</view>
+         <view class="item">==</view>
+         <view class="item">北京</view>
+       </view>
+       <view class="main_item row2">
+         <view>11月9日</view>
+       </view>
+       <view class="main_item row3">
+         <view class="button">火车票查询</view>
+       </view>
+     </view>
+   </view>
+
+  <view></view>
+</view>
