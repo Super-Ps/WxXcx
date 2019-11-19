@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/qiangpiao/qiangpiao",
+    "pages/homepage/homepage",
     "pages/query/query",
     "pages/homefrom/homefrom",
     "pages/home/home",
@@ -18,8 +20,8 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/query/query",
-        "text": "查询",
+        "pagePath": "pages/homepage/homepage",
+        "text": "抢票",
         "iconPath": "images/chaxun.png",
         "selectedIconPath": "images/bookSelected.png"
       },

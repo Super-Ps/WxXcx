@@ -1,0 +1,56 @@
+/* pages/qiangpiao/qiangpiao.wxss */
+.head{
+    width: 100vw;
+    height: 25vh;
+    background-color: rgb(10, 128, 247);
+    /* border: solid springgreen; */
+}
+.body{
+    width: 100vw;
+    height: 75vh;
+    background-color: slategray;
+}
+
+.infomation{
+    height: 35vh;
+    background-color: #ffffff;
+    width: 93vw;
+    position: absolute;
+    left: 12px;
+    top: 39rpx;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px 0px #ccc;
+    
+    
+}
+.item-flex{
+    height: 5vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+.item{
+    margin-top: 20rpx;
+    /* padding-top: 10rpx  ; */
+    font-size: 25rpx;
+    color: #ccc;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+
+.city-item{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.city{
+    margin-top: 10rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+
+.data{
+    font-size: 35rpx;
+    color: #ccc;
+}

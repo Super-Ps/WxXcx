@@ -1,0 +1,12 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="home_container" hover-class="none" hover-stop-propagation="false">
+    <view class="picture_container">图片</view>
+    <view class="title_container">标题</view>
+    <view class="add_query">按钮
+
+        <view class="button" hover-class="none" hover-stop-propagation="false" bindtap = "gotoQuery">
+            添加抢票
+        </view>
+    </view>
+
+</view>

@@ -17,10 +17,10 @@ Page({
     },
     
     showCity: false,
-    startCityName:'',
-    endCityName:'',
+    startCityName:'深圳',
+    endCityName:'长沙',
 
-    date:'2016-09-01',
+    date:'2019-11-25',
 
   },
   queryformData:{

@@ -37,18 +37,19 @@ Page({
            wx.login({
                success: function (data) {
                  console.log('data@@@code',data)
-                 console.log('code',data.code)
+                 console.log('code222',data.code)
                    wx.request({
-                      url: 'http://localhost:3000/wx/login',
+                      method:'POST',
+                      url: 'http://47.112.218.202:8090/gateway/wechat/getOpenId.do',
                       data: {
                       code: data.code,
                       appid: 'wxce0321505ba7122b',
                       secret: '10c1f3dac03673032492752add69869a',
                       grant_type: 'authorization_code'
                      },
-                   success: function (res) {
-                     console.log('@@@@@res',res)
-                    app.globalData.openid = res.data.openid
+                   success: function (resAAAA) {
+                     console.log('@@@@@res',resAAAA)
+                    app.globalData.openid = resAAAA.data.openid
                      },
                    fail: function (res) {
                       console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)

@@ -1,0 +1,40 @@
+/* pages/homepage/homepage.wxss */
+.home_container{
+    width: 100vw;
+    height: 100vh;
+    border: solid, tomato  ;
+    border-width: 15px;
+
+    
+}
+
+.picture_container{
+    width: 100vw;
+    height: 60vh;
+    background: rgb(27, 172, 147);
+}
+.title_container{
+    width: 100vw;
+    height: 20vh;
+    background: rgb(20, 78, 133);
+}
+
+
+.add_query{
+    width: 100vw;
+    height: 20vh;
+
+}
+
+.button{
+    height: 33%;
+    width:68%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:8vh;
+    background: rgb(0, 102, 255);
+    margin-left: 59px;
+
+}

@@ -1,0 +1,26 @@
+<!--pages/qiangpiao/qiangpiao.wxml-->
+<view class="qp-container" >
+    <view class="head" >
+        head
+    </view>
+    <view class="body" >
+        body
+        <view class="infomation" >
+            <view class="item-flex" >
+                <view class="item start" >出发站</view>
+                <view class="item end" >到达站</view>
+            </view>
+            <view class="city-item" >
+                <view class="city row1" >上海</view>
+                <view class="city row2" >==</view>
+                <view class="city row3" >北京</view>
+            </view> 
+            <view class="data-item" >
+                <view class="data ">抢票日期</view>
+                <view class="data">乘车车次</view>
+                <view class="data">备选座席</view>
+            </view>
+        </view>
+    </view>
+
+</view>
