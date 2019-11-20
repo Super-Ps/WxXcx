@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/qiangpiao/qiangpiao",
-    "pages/homepage/homepage",
+    "pages/login/login",
+    "pages/addpage/add",
+    "pages/settingpage/set",
     "pages/query/query",
     "pages/homefrom/homefrom",
     "pages/home/home",
     "pages/querylist/querylist",
     "pages/test/test",
     "pages/logs/logs",
-    "pages/city/city"
+    "pages/city/city",
+    "pages/homepage/homepage"
     
   ],
   "window": {

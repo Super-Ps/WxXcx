@@ -1,0 +1,76 @@
+<view class="setcontainer">
+  <view class="body">
+    <view class="bodybg"></view>
+    <view class="bodymain">
+      <view class="by1">
+        <view class="main_item row1">
+          <view class="item" data-type="0" bindtap="goCity">
+            <text class="pointTitle">出发站</text>
+            <text class="point">{{startCityName}}</text>
+          </view>
+          <view class="item">==</view>
+          <view class="item" data-type="1" bindtap="goCity">
+            <text class="pointTitle">到达站</text>
+            <text class="point">{{endCityName}}</text>
+          </view>
+        </view>
+        <view class="main_item row2">
+          <view>
+            <text class="it1">备选日期</text>
+            <text class="it2">11月21日</text>
+          </view>
+          <view>
+            <text class="it3">推荐多选</text>
+            <text class="it4">></text>
+          </view>
+        </view>
+        <view class="main_item row3">
+          <view>
+            <text class="it1">备选车次</text>
+            <text class="it2">G104</text>
+          </view>
+          <view>
+            <text class="it3">推荐多选</text>
+            <text class="it4">></text>
+          </view>
+
+
+        </view>
+        <view class="main_item row4">
+          <view>
+            <text class="it1">备选坐席</text>
+            <text class="it2">一等座</text>
+          </view>
+          <view>
+            <text class="it3">推荐多选</text>
+            <text class="it4">></text>
+          </view>
+        </view>
+      </view>
+      <view class="by2">
+        <view class="it5">登录12306</view>
+        <view bindtap="gologin">
+          <text class="it4" >登陆账号</text>
+          <text class="it4">></text>
+        </view>
+      </view>
+      <view class="by3">
+        <text class="addBtn">添加/修改乘客</text>
+      </view>
+      <view class="by4">
+        <text class="it4">联系手机</text>
+        <input maxlength="11" type="number" placeholder="用于接收短信" placeholder-style="font-size:24rpx;"></input>
+      </view>
+      <view class="by5">
+        <view class="button">
+          <text>下一步</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="cityContainer {{showCity ? 'showCity': ''}}">
+      <list-html data="{{city}}" my-city="当前城市" binddetail="binddetail" config="{{cityConfig}}"> </list-html>
+  </view> 
+</view>

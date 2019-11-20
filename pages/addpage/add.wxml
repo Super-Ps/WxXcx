@@ -1,0 +1,9 @@
+<!--pages/addpage/add.wxml-->
+<view class="container">
+  <image src="../../images/logo.png" class="logo"></image>
+  <view class="text">
+    <text class="tt">智行专业抢票</text>
+    <text class="tt2">云端抢票、技术抢票、行业领先</text>
+  </view>
+  <view class="btn" bindtap="goset">添加抢票</view>
+</view>          

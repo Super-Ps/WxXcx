@@ -1,0 +1,39 @@
+/* pages/addpage/add.wxss */
+.logo{
+  height: 36vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 24vh;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+}
+.tt{
+  width: 100vw;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-family: PingFangSC-Regular;
+}
+.tt2{
+  width: 100vw;
+  text-align: center;
+  font-size: .32rem;
+  letter-spacing: 0.1rem;
+  font-family: PingFangSC-Regular;
+  color: #b3b0b0
+}
+.btn{
+  width: 60vw;
+  background-color: #0e79f3;
+  color: #fff;
+  text-align: center;
+  font-size: .8rem;
+  margin-top: 6vh;
+  padding: .5rem 0;
+  margin-left: 20vw;
+  letter-spacing: 0.05rem;
+  border-radius: 3rem;
+}

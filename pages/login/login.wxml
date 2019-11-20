@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="login" >
+    <view class="login-from" >
+        <form bindsubmit="formSubmit" >    
+            <view class="user"  >
+                    <text class="" >用户</text>
+                    <input  name="uname" maxlength="15" type="text" placeholder="12306账号" ></input>
+            </view> 
+            <view class="pwd"  >
+                    <text class="" >密码</text>
+                    <input name="upwd" maxlength="20" type="text" placeholder="12306密码" ></input>
+            </view> 
+            <button formType="submit">Submit</button>
+        </form>
+     </view>
+</view>

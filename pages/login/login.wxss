@@ -1,0 +1,20 @@
+/* pages/login/login.wxss */
+
+.login-from{
+
+    width: 100vw;
+    height: 60vh;
+    border: solid springgreen;
+    background: thistle;
+}
+
+.user{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.pwd{
+
+    display: flex;
+    flex-flow: row nowrap;
+  
+}
