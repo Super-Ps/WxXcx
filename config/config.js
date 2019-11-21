@@ -1,5 +1,5 @@
 // 服务器域名
-const baseUrl = 'https://tms.dp12306.com';
+const baseUrl = 'https://tms.xuanyutech.net';
 
 //获取openId
 const getOpenId = baseUrl + '/tms-web/gateway/wechat/getOpenId.do';

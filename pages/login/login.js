@@ -27,7 +27,6 @@ Page({
         console.log('data@@@code',data)
         console.log('code222',data.code)
           wx.request({
-             method:'POST',
              url: api.getOpenId,
              data: {
              code: data.code,
