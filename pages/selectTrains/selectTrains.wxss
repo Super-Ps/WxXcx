@@ -1,0 +1,142 @@
+/* pages/selectTrains/selectTrains.wxss */
+
+.bodybox {
+  height: 100vh;
+  width: 100vw;
+  background-color: #eee;
+}
+
+.listbox {
+  height: 90vh;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 16rpx;
+}
+
+.btnbox {
+  height: 10vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 94vw;
+  padding: 11rpx 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5vw;
+  background: #0e79f3;
+  font-size: 32rpx;
+}
+
+.list {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 22rpx;
+}
+
+.tt {
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.item {
+  margin-top: 20rpx;
+  border-top: solid 1rpx #eee;
+  padding: 15rpx 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.it1, .it2, .it3 {
+  width: 28%;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.it4 {
+  width: 16%;
+  height: 140rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.it2 {
+  text-align: center;
+}
+
+.it3 {
+  text-align: right;
+}
+
+.it1 .i1 {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #0e79f3;
+}
+
+.it1 .i2, .it3 .i2 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #555;
+}
+
+.it1 .i3, .it2 .i3, .it3 .i3 {
+  font-size: 20rpx;
+  color: #666;
+}
+
+.it2 .i1 {
+  font-size: 24rpx;
+  color: #222;
+}
+
+.it2 .i2 {
+  font-size: 24rpx;
+  color: #111;
+  border-top: solid 2rpx rgb(209, 207, 207);
+  position: relative;
+}
+
+.it2 .i2::before {
+  content: '●';
+  position: absolute;
+  top: -1rpx;
+  left: -4rpx;
+  top: -19rpx;
+  color: rgb(209, 207, 207);
+  transform: scale(0.8);
+}
+
+.it2 .i2::after {
+  content: '●';
+  position: absolute;
+  top: -19rpx;
+  right: -4rpx;
+  top: -19rpx;
+  color: rgb(209, 207, 207);
+  transform: scale(0.8);
+}
+
+.it3 .i1 {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #000;
+}

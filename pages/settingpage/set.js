@@ -8,11 +8,12 @@ Page({
   data: {
     startCityName: '上海',
     endCityName: '北京',
-    riqi: [],
+    riqi: '',
     checi: [],
     zuoxi: [],
     mobile: '',
     showCity: false,
+    showDatePick: false,
     city: City,
     cityConfig: {
       horizontal: true, // 第一个选项是否横排显示（一般第一个数据选项为 热门城市，常用城市之类 ，开启看需求）
@@ -26,59 +27,76 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: '抢票设置' })
+  onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: '抢票设置'
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  goCity: function (e) {
+  getDates(v) {
+    this.setData({riqi: v.detail})
+    console.log('选择日期：', this.data.riqi.toString())
+  },
+  selectDate() {
+    this.setData({
+      showDatePick: true
+    })
+  },
+  selectTrains() {
+    wx.navigateTo({
+      url: '../selectTrains/selectTrains'
+    
+    })
+  },
+  goCity(e) {
     console.log('eee', e)
     this.setData({
       showCity: true,
@@ -102,22 +120,6 @@ Page({
       })
     }
 
-  },
-
-  gologin: function(e){
-    console.log('ee',e)
-    wx.navigateTo({
-      url: '../login/login',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
   }
 
 })

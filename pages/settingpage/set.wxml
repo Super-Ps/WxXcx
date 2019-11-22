@@ -17,10 +17,10 @@
         <view class="main_item row2">
           <view>
             <text class="it1">备选日期</text>
-            <text class="it2">11月21日</text>
+            <text class="it2">{{riqi}}</text>
           </view>
           <view>
-            <text class="it3">推荐多选</text>
+            <text class="it3" bindtap="selectDate">推荐多选</text>
             <text class="it4">></text>
           </view>
         </view>
@@ -30,7 +30,7 @@
             <text class="it2">G104</text>
           </view>
           <view>
-            <text class="it3">推荐多选</text>
+            <text class="it3" bindtap="selectTrains">推荐多选</text>
             <text class="it4">></text>
           </view>
 
@@ -49,8 +49,8 @@
       </view>
       <view class="by2">
         <view class="it5">登录12306</view>
-        <view bindtap="gologin">
-          <text class="it4" >登陆账号</text>
+        <view>
+          <text class="it4">登陆账号</text>
           <text class="it4">></text>
         </view>
       </view>
@@ -70,7 +70,8 @@
     </view>
   </view>
 
-  <view class="cityContainer {{showCity ? 'showCity': ''}}">
+  <view wx:if="{{showCity}}" class="cityContainer {{showCity ? 'showCity': ''}}">
       <list-html data="{{city}}" my-city="当前城市" binddetail="binddetail" config="{{cityConfig}}"> </list-html>
   </view> 
+  <select-time show="{{showDatePick}}" bindgetDates="getDates"></select-time>
 </view>

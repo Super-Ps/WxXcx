@@ -1,0 +1,121 @@
+<!--pages/selectTrains/selectTrains.wxml-->
+
+<view class="bodybox">
+  <view class="listbox">
+    <view class="list">
+      <view class="tt">其它车次</view>
+      <checkbox-group bindchange="checkboxChange">
+        <view class="item">
+          <view class="it1">
+            <view class="i1">06:26</view>
+            <view class="i2">上海虹桥</view>
+            <view class="i3">二等座99张</view>
+          </view>
+          <view class="it2">
+            <view class="i1">6时3分</view>
+            <view class="i2">G102</view>
+            <view class="i3">一等座99张</view>
+          </view>
+          <view class="it3">
+            <view class="i1">12:29</view>
+            <view class="i2">北京南</view>
+            <view class="i3">商务座14张</view>
+          </view>
+          <view class="it4">
+            <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
+          </view>
+
+        </view>
+        <view class="item">
+          <view class="it1">
+            <view class="i1">06:26</view>
+            <view class="i2">上海虹桥</view>
+            <view class="i3">二等座99张</view>
+          </view>
+          <view class="it2">
+            <view class="i1">6时3分</view>
+            <view class="i2">G102</view>
+            <view class="i3">一等座99张</view>
+          </view>
+          <view class="it3">
+            <view class="i1">12:29</view>
+            <view class="i2">北京南</view>
+            <view class="i3">商务座14张</view>
+          </view>
+          <view class="it4">
+            <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
+          </view>
+
+        </view>
+        <view class="item">
+          <view class="it1">
+            <view class="i1">06:26</view>
+            <view class="i2">上海虹桥</view>
+            <view class="i3">二等座99张</view>
+          </view>
+          <view class="it2">
+            <view class="i1">6时3分</view>
+            <view class="i2">G102</view>
+            <view class="i3">一等座99张</view>
+          </view>
+          <view class="it3">
+            <view class="i1">12:29</view>
+            <view class="i2">北京南</view>
+            <view class="i3">商务座14张</view>
+          </view>
+          <view class="it4">
+            <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
+          </view>
+
+        </view>
+        <view class="item">
+          <view class="it1">
+            <view class="i1">06:26</view>
+            <view class="i2">上海虹桥</view>
+            <view class="i3">二等座99张</view>
+          </view>
+          <view class="it2">
+            <view class="i1">6时3分</view>
+            <view class="i2">G102</view>
+            <view class="i3">一等座99张</view>
+          </view>
+          <view class="it3">
+            <view class="i1">12:29</view>
+            <view class="i2">北京南</view>
+            <view class="i3">商务座14张</view>
+          </view>
+          <view class="it4">
+            <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
+          </view>
+
+        </view>
+        <view class="item">
+          <view class="it1">
+            <view class="i1">06:26</view>
+            <view class="i2">上海虹桥</view>
+            <view class="i3">二等座99张</view>
+          </view>
+          <view class="it2">
+            <view class="i1">6时3分</view>
+            <view class="i2">G102</view>
+            <view class="i3">一等座99张</view>
+          </view>
+          <view class="it3">
+            <view class="i1">12:29</view>
+            <view class="i2">北京南</view>
+            <view class="i3">商务座14张</view>
+          </view>
+          <view class="it4">
+            <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
+          </view>
+
+        </view>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="btnbox">
+    <view bindtap="submit" class="button">
+      <text>确定</text>
+    </view>
+  </view>
+</view>

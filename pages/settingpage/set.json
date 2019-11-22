@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "list-html": "/component/wx-index-list/wx-index-list"
+    "list-html": "/component/wx-index-list/wx-index-list",
+    "select-time": "/component/selectTime/selectTime"
   },
   "navigationBarBackgroundColor": "#0e79f3",
   "navigationBarTextStyle": "white"

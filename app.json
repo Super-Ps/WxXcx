@@ -1,16 +1,17 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/addpage/add",
+    "pages/addpage/add", 
+    "pages/selectTrains/selectTrains",
     "pages/settingpage/set",
+    "pages/qiangpiao/qiangpiao",
+    "pages/homepage/homepage",
     "pages/query/query",
     "pages/homefrom/homefrom",
     "pages/home/home",
     "pages/querylist/querylist",
     "pages/test/test",
     "pages/logs/logs",
-    "pages/city/city",
-    "pages/homepage/homepage"
+    "pages/city/city"
     
   ],
   "window": {

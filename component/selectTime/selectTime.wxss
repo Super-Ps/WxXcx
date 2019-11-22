@@ -1,0 +1,80 @@
+/* component/selectTime/selectTime.wxss */
+.body{
+  z-index: 8;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.a{
+  z-index: 9;
+  height: 100vh;
+  width: 100vw;
+  opacity: .5;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.b{
+  z-index: 10;
+  height: 85vh;
+  width: 100vw;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.head{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 70rpx;
+  align-items: center;
+  padding: 0 26rpx;
+  box-sizing: border-box;
+}
+.t1{
+  font-size: 28rpx;
+  color: #555;
+}
+.t2{
+  font-size: 32rpx;
+  color: #000;
+  font-weight: bold;
+}
+.t3{
+  font-size: 28rpx;
+  color: #0e79f3;
+}
+.title{
+  font-size: 20rpx;
+  background-color: rgb(252, 236, 191);
+  color: rgb(255, 94, 0);
+  padding: 6rpx 12rpx;
+  border-radius: 4rpx;
+  box-sizing: border-box;
+  margin: 0 26rpx;
+  height: 40rpx;
+}
+.itbody{
+  margin-top: 10rpx;
+  height: calc(85vh - 70rpx - 10rpx - 45rpx);
+  overflow: scroll;
+  padding: 0 26rpx;
+  box-sizing: border-box;
+}
+.item{
+  height: 80rpx;
+  border-bottom: solid 1rpx #ededed;
+  font-size: 32rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.item:last-child{
+  border: none;
+}

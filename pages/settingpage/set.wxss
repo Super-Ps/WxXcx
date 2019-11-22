@@ -85,7 +85,7 @@
 }
 
 .main_item:not(:last-child) {
-  border-bottom: solid 1px #ededed;
+  border-bottom: solid 1rpx #ededed;
 }
 
 .main_item {
