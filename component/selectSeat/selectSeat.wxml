@@ -1,4 +1,4 @@
-<!--component/selectTime/selectTime.wxml-->
+
 <view wx:if="{{show}}" class="body">
   <view class="a">
 
@@ -6,17 +6,16 @@
   <view class="b">
     <view class="head">
       <text class="t1" bindtap="cancel">取消</text>
-      <text class="t2">备选日期</text>
+      <text class="t2">备选坐席</text>
       <text class="t3" bindtap="submit">确定</text>
     </view>
-    <view class="title">抢票高峰，多选几个日期(最多可选3个日期)，成功率更高</view>
     <view class="itbody">
     <checkbox-group bindchange="checkboxChange" >
       <view wx:for="{{items}}" wx:key="*this" class="item">
       
-        <text>{{item.date}}（{{item.describe}}）</text>
+        <text>{{item.name}}</text>
        
-        <checkbox value="{{item.date}}" checked="{{item.check}}"  color="#0e79f3"/>
+        <checkbox value="{{item.name}}" checked="{{item.check}}"  color="#0e79f3"/>
         
       </view>
     </checkbox-group>

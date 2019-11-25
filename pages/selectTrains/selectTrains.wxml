@@ -5,7 +5,31 @@
     <view class="list">
       <view class="tt">其它车次</view>
       <checkbox-group bindchange="checkboxChange">
-        <view class="item">
+          <view wx:for="{{list}}" data-key='{{index}}' wx:key="unique">
+               <!-- {{index}}: {{list.data.data}} -->
+               <view class="item">
+                  <view class="it1">
+                    <view class="i1">{{item.start_time}}</view>
+                    <view class="i2">{{item.query_from_station_name}}</view>
+                    <view class="i3">二等座{{item.erz}}</view>
+                  </view>
+                  <view class="it2">
+                    <view class="i1">{{item.distance_time}}</view>
+                    <view class="i2">{{item.stationTrainCode}}</view>
+                    <view class="i3">一等座{{item.ydz}}</view>
+                  </view>
+                  <view class="it3">
+                    <view class="i1">{{item.arrival_time}}</view>
+                    <view class="i2">{{item.query_to_station_name}}</view>
+                    <view class="i3">商务座{{item.swz}}</view>
+                  </view>
+                  <view class="it4">
+                    <checkbox value="{{item.stationTrainCode}}" checked="{{item.check}}" color="#0e79f3" />
+                  </view>
+        
+                </view>
+          </view>
+        <!-- <view class="item">
           <view class="it1">
             <view class="i1">06:26</view>
             <view class="i2">上海虹桥</view>
@@ -109,7 +133,7 @@
             <checkbox value="{{item.checi}}" checked="{{item.check}}" color="#0e79f3" />
           </view>
 
-        </view>
+        </view> -->
       </checkbox-group>
     </view>
   </view>

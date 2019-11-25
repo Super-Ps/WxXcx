@@ -118,7 +118,6 @@
 .it2 .i2::before {
   content: '●';
   position: absolute;
-  top: -1rpx;
   left: -4rpx;
   top: -19rpx;
   color: rgb(209, 207, 207);
@@ -128,7 +127,6 @@
 .it2 .i2::after {
   content: '●';
   position: absolute;
-  top: -19rpx;
   right: -4rpx;
   top: -19rpx;
   color: rgb(209, 207, 207);

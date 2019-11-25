@@ -10,8 +10,9 @@ Page({
    */
   data: {
     uname:'',
-
-    upwd:''
+    upwd:'',
+    tel:'',
+    nickName:''
   },
 
   formSubmit: function (e) {
@@ -21,30 +22,82 @@ Page({
   // this.doLogin()
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     if(!e.detail.value.uname ){
-      console.log('账号必填')
+      wx.showToast({
+        title: '账号必填',
+        icon: 'success',
+        duration: 2000
+      })
+      
     }
     if(!e.detail.value.upwd ){
-      console.log('密码必填')
+      wx.showToast({
+        title: '密码必填',
+        icon: 'success',
+        duration: 2000
+      })
     }
     this.setData({
       uname :e.detail.value.uname,
-      upwd : e.detail.value.upwd
+      upwd : e.detail.value.upwd,
+      tel:e.detail.value.tel,
+    //  email:e.detail.value.email
     }
     )
-    
-    
+    console.log('&&&&&&&',this.data.nickName,this.data.uname,this.data.upwd,this.data.tel,this.data.email)
+    this.bindOpenKey(this.data.nickName,this.data.uname,this.data.upwd,this.data.tel,this.data.email)
 
-
-   // console.log('11',this.data)
-    this.getOpenKey(this.data.uname,this.data.upwd)
-
-    //this.data.uname=
   },
 
-  getOpenKey:function(uname,upwd){
-    
+
+bindOpenKey : function(nickName,uname,upwd,tel,email){
+  if(app.globalData.openkey){
+  //  console.log('key',app.globalData)
+
+    console.log('id,',app.globalData.openkey.openid,'key',app.globalData.openkey.session_key)
+    wx.request({
+      url: api.bind,
+      header:{
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        openId:app.globalData.openkey.openid,
+        sessionKey:app.globalData.openkey.session_key,
+        bindName:nickName,
+        userName: uname,
+        password : upwd ,
+        tel:tel,
+        email:email
+
+      },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log('通过open——id拿后台登录状态',res)
+      },
+      fail: function(res) {
+        // fail
+        console.log('通过open——id登录失败',res)
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  }
+},
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '登录12306账号'
+    })
+
+    var that = this;
+ 
+    //通过code信息后获取open_id
     wx.login({
-      
       success: function (data) {
         console.log('data@@@code',data)
         console.log('code222',data.code)
@@ -57,13 +110,29 @@ Page({
              grant_type: 'authorization_code'
             },
             success: function (res) {
-              console.log('@@@@@res',res)
+              console.log('获取openkey',res)
+              // wx.showToast({
+              //   title: '成功',
+              //   icon: 'success',
+              //   duration: 2000
+              // }) 
+              app.globalData.openkey = res.data.data
+              console.log('pp.globalData.openkey ',app.globalData.openkey )
+              wx.getUserInfo({
               
-            //  this.bindOpenKey(uname,upwd,res)
-              this.getUserInfo()
-              
-            //  console.log('app.globalData',app.globalData)
-              },
+                success: function(res){  
+                  console.log('info',res)      
+                  that.setData({
+                    nickName:res.userInfo.nickName
+                  })
+                },
+                fail: function() {
+                  console.log('获取昵称失败')
+                },
+              })
+             console.log('app.globalData',app.globalData)
+            //获取用户信息
+          },
             fail: function (res) {
               console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
               }
@@ -74,57 +143,6 @@ Page({
        callback(err)
      }
     })
-  },
-  bindOpenKey:function(uname,upwd,res){
-    if(res.data.data){
-      app.globalData.openkey = res.data.data
-      wx.request({
-        url: api.bind,
-        data: {
-
-          open_id:app.globalData.openkey.open_id,
-          sessionKey:app.globalData.openkey.sessionKey,
-          bindName :'',
-          userName: uname,
-          password : upwd 
-
-        },
-        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-        // header: {}, // 设置请求的 header
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
-    }
-  },
-
-  getUserInfo: function() {
-    let that = this;
-
-    let userInfo = app.globalData.userInfo;
-
-    console.info('userInfo is:', userInfo);
-
-    // if (userInfo) {
-    //     that.setData({
-    //         hasLogin: true,
-    //         userInfo: userInfo
-    //     });
-    //   //  wx.hideLoading();
-    // } else {
-    //     console.log('globalData中userInfo为空');
-    // }
-},
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
   },
 

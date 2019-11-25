@@ -2,7 +2,6 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-
     console.log('app  onlaunch!!')
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -35,6 +34,37 @@ App({
         }
       }
     })
+  },
+
+     // 检查本地 storage 中是否有登录态标识
+     checkLoginStatus: function () {
+      let that = this;
+      let loginFlag = wx.getStorageSync('loginFlag');
+      if (loginFlag) {
+          // 检查 session_key 是否过期
+          wx.checkSession({
+              // session_key 有效(为过期)
+              success: function () {
+                  // 直接从Storage中获取用户信息
+                  let userStorageInfo = wx.getStorageSync('userInfo');
+                  if (userStorageInfo) {
+                      that.globalData.userInfo = JSON.parse(userStorageInfo);
+                  } else {
+                      that.showInfo('缓存信息缺失');
+                      console.error('登录成功后将用户信息存在Storage的userStorageInfo字段中，该字段丢失');
+                  }
+
+              },
+              // session_key 过期
+              fail: function () {
+                  // session_key过期
+                  that.doLogin();
+              }
+          });
+      } else {
+          // 无登录态
+          that.doLogin();
+      }
   },
    
   globalData: {

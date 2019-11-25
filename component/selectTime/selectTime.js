@@ -15,10 +15,11 @@ Component({
     let itemsnew = []
     let now = new Date().getTime();
     let i = 0
-    while (i < 60) {
+    while (i < 61) {
       let p = {
         check: false,
-        date: this.format(now + (i + 1) * (1000 * 60 * 60 * 24))
+        describe: this.formatDes(now + i * (1000 * 60 * 60 * 24), i),
+        date: this.format(now + i * (1000 * 60 * 60 * 24))
       }
       itemsnew.push(p)
       i++
@@ -42,6 +43,7 @@ Component({
   data: {
     items: [],
     chooseDete: []
+   
 
   },
 
@@ -49,6 +51,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+  
     cancel () {
       this.setData({
         show: false
@@ -63,6 +66,41 @@ Component({
     adds(m) {
       return m < 10 ? '0' + m : m
     },
+    formatDes(v, index) {
+      let a = ''
+      let d = new Date(v).getDay()
+      switch (d) {
+        case 1:
+          a = '周一'
+        break
+        case 2:
+          a = '周二'
+          break
+        case 3:
+          a = '周三'
+          break
+        case 4:
+          a = '周四'
+          break
+        case 5:
+          a = '周五'
+          break
+        case 6:
+          a = '周六'
+          break
+        case 0:
+          a = '周日'
+          break
+        
+      }
+      if (index === 0){
+        a = '今天'
+      }
+      if (index === 1){
+        a = '明天'
+      }
+      return a
+    },
     format(shijianchuo) {
 
       //shijianchuo是整数，否则要parseInt转换
@@ -70,7 +108,7 @@ Component({
       var y = time.getFullYear()
       var m = time.getMonth() + 1
       var d = time.getDate()
-      return  this.adds(m) + '-' + this.adds(d)
+      return  y + '-' + this.adds(m) + '-' + this.adds(d)
     },
     checkboxChange(e) {
 

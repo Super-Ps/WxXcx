@@ -118,13 +118,26 @@
 .it1 {
   font-size: 28rpx;
   color: #555;
+  width: 24%;
 }
 
 .it2 {
+  width: 65%;
+  display: inline-block;
   font-size: 28rpx;
   color: #000;
   font-weight: bold;
   margin-left: 30rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.contents{
+  width: 75%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
 }
 
 .it3 {

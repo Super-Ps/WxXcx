@@ -7,9 +7,17 @@
                     <input  name="uname" maxlength="15" type="text" placeholder="12306账号" ></input>
             </view> 
             <view class="pwd"  >
-                    <text class="" >密码</text>
+                    <text class="" >密码</ text>
                     <input name="upwd" maxlength="20" type="text" placeholder="12306密码" ></input>
             </view> 
+            <view class="tel"  >
+                <text class="" >电话</text>
+                <input name="tel" maxlength="20" type="text" placeholder="电话" ></input>
+             </view>
+
+            <view class="nickName" >
+                {{nickName}}
+            </view>
             <button formType="submit">Submit</button>
         </form>
      </view>
