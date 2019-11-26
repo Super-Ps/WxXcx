@@ -116,6 +116,7 @@ Page({
     })
   },
   getDates(v) {
+    console.log('getDates',v)
     this.setData({riqi: v.detail})
     console.log('选择日期：', this.data.riqi.toString())
   },
@@ -125,10 +126,21 @@ Page({
     })
   },
   selectTrains() {
-    wx.navigateTo({
-      url: `../selectTrains/selectTrains?startCityName=${this.data.startCityName}&endCityName=${this.data.endCityName}&riqi=${this.data.riqi}`
-    
-    })
+    if(this.data.riqi === ''){
+      wx.showModal({
+        title: '提示',
+        content: '请选择1个或多个日期',
+        showCancel:false,
+        confirmColor:'#FF0000',
+        success (res) {
+          console.log('点击车次后的回调',res)
+        }
+      }) 
+    }else{
+      wx.navigateTo({
+        url: `../selectTrains/selectTrains?startCityName=${this.data.startCityName}&endCityName=${this.data.endCityName}&riqi=${this.data.riqi}`
+      })
+    }
   },
   loginPage(){
     wx.navigateTo({
@@ -188,35 +200,73 @@ Page({
     })
   },
 
+
+
   submitFrom (){
-    wx.request({
-      url: api.order,
-      header:{
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        openId: app.globalData.openkey.openid,   
-        members: this.data.usernmae,  //  乘车人
-        tranDates: this.data.riqi,  // 时间
-        tranNumbers: this.data.stationTrainCodeA,  // 购票车次以,号分割
-        fromStation: this.data.startCityName,  //出发站
-        toStation: this.data.endCityName,  // 到达站
-        seats: this.data.zuoxi    ,// 座席
-        tel:this.data.mobile
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-        console.log('下单接口返回',res)
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+
+    if(this.data.riqi === ''){
+      wx.showModal({
+        title: '提示',
+        content: '请选择1个或多个日期',
+        showCancel:false,
+        confirmColor:'#FF0000',
+        success (res) {
+
+        }
+      })   
+    }else if(this.data.stationTrainCodeA === ''){
+      wx.showModal({
+        title: '提示',
+        content: '请选择1个或多个车次',
+        showCancel:false,
+        confirmColor:'#FF0000',
+        success (res) {
+        }
+      })
+    }
+    else if(this.data.zuoxi === ''){
+      wx.showModal({
+        title: '提示',
+        content: '请选择1个或多个坐席',
+        showCancel:false,
+        confirmColor:'#FF0000',
+        success (res) {
+        }
+      })
+    }else{
+
+      wx.request({
+        url: api.order,
+        header:{
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          openId: app.globalData.openkey.openid,   
+          members: this.data.usernmae,  //  乘车人
+          tranDates: this.data.riqi,  // 时间
+          tranNumbers: this.data.stationTrainCodeA,  // 购票车次以,号分割
+          fromStation: this.data.startCityName,  //出发站
+          toStation: this.data.endCityName,  // 到达站
+          seats: this.data.zuoxi    ,// 座席
+          tel:this.data.mobile
+        },
+        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        // header: {}, // 设置请求的 header
+        success: function(res){
+          // success
+          console.log('下单接口返回',res)
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }
+
+
+    
   }
 
   

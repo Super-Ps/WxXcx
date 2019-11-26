@@ -50,40 +50,55 @@ Page({
 
 
 bindOpenKey : function(nickName,uname,upwd,tel,email){
-  if(app.globalData.openkey){
+  
   //  console.log('key',app.globalData)
-
-    console.log('id,',app.globalData.openkey.openid,'key',app.globalData.openkey.session_key)
-    wx.request({
-      url: api.bind,
-      header:{
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        openId:app.globalData.openkey.openid,
-        sessionKey:app.globalData.openkey.session_key,
-        bindName:nickName,
-        userName: uname,
-        password : upwd ,
-        tel:tel,
-        email:email
-
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+    wx.getStorage({
+      key: 'openid',
       success: function(res){
         // success
-        console.log('通过open——id拿后台登录状态',res)
+        console.log('拿到缓存openid',res.openid,res)
+        wx.request({
+          url: api.bind,
+          header:{
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            openId:res.openid,
+            sessionKey:res.session_key,
+            bindName:nickName,
+            userName: uname,
+            password : upwd ,
+            tel:tel,
+            email:email
+    
+          },
+          method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          // header: {}, // 设置请求的 header
+          success: function(res){
+            // success
+            console.log('通过open——id拿后台登录状态',res)
+          },
+          fail: function(res) {
+            // fail
+            console.log('通过open——id登录失败',res)
+          },
+          complete: function() {
+            // complete
+          }
+        })
       },
-      fail: function(res) {
+      fail: function() {
         // fail
-        console.log('通过open——id登录失败',res)
+        console.log('获取缓存失败')
       },
       complete: function() {
         // complete
       }
     })
-  }
+
+    //console.log('id,',app.globalData.openkey.openid,'key',app.globalData.openkey.session_key)
+
+  
 },
 
   /**
@@ -116,9 +131,23 @@ bindOpenKey : function(nickName,uname,upwd,tel,email){
               //   icon: 'success',
               //   duration: 2000
               // }) 
-              app.globalData.openkey = res.data.data
-              console.log('pp.globalData.openkey ',app.globalData.openkey )
-              wx.getUserInfo({
+                wx.setStorage({
+                  key: 'openid',
+                  data: res.data.data,
+                  success: function(res){
+                    // success
+                    console.log('设置缓存',res)
+                  },
+                  fail: function() {
+                    // fail
+                  },
+                  complete: function() {
+                    // complete
+                  }
+                })
+            //  app.globalData.openkey = res.data.data
+            //  console.log('pp.globalData.openkey ',app.globalData.openkey )
+               wx.getUserInfo({
               
                 success: function(res){  
                   console.log('info',res)      

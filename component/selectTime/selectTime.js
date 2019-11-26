@@ -11,6 +11,7 @@ Component({
   },
 
   ready() {
+    console.log('Component')
 
     let itemsnew = []
     let now = new Date().getTime();
@@ -111,6 +112,7 @@ Component({
       return  y + '-' + this.adds(m) + '-' + this.adds(d)
     },
     checkboxChange(e) {
+      console.log('checkboxChange',e)
 
       let value = e.detail.value
       let it = [...this.data.items]
